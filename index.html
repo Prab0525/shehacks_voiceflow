@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <div id="chatbox"></div>
         <script type="text/javascript">
             (function(d, t) {
                 var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -8,7 +9,12 @@
                   window.voiceflow.chat.load({
                     verify: { projectID: '6782b56b69cb5792284b1716' },
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production'
+                    versionID: 'production',
+                    render: {
+                      mode: 'embedded',
+                      target: document.getElementById('chatbox'),
+                    },
+                    autostart: true
                   });
                 }
                 v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
